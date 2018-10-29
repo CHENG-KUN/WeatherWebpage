@@ -27,9 +27,9 @@ body{
 .city{
     text-align: center;
 }
-.city>img{
-    width: 30px;
-}
+/*.city>img{*/
+    /*width: 30px;*/
+/*}*/
 .city>div{
     font-size: 28px;
     vertical-align: middle;

@@ -9,7 +9,10 @@ $(document).ready(function(){
             lon = position.coords.longitude;
             console.log(lat+"  "+lon);
 
-            var para = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=c1c694969d22d150c4fad70b654ddcda"
+            // var para = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=c1c694969d22d150c4fad70b654ddcda"
+
+            var para = "http://192.168.88.12:8999/weatherbylocation/"+lat+"/"+lon
+
 
             console.log(para)
 
@@ -17,7 +20,7 @@ $(document).ready(function(){
                 var city = json["name"];
                 var cnty = json["sys"]["country"];
                 var weatherNow = json["weather"][0]["main"];
-                degree = (json["main"]["temp"] - 273.15).toFixed(2);
+                degree = (json["main"]["temp"] - 273.15).toFixed(0);
                 tmpShow = degree;
 
 
@@ -33,7 +36,7 @@ $(document).ready(function(){
     $(".btn-tmp-change").on("click",function(){
         console.log($(".tmp").html());
         if(degree == $(".tmp").html()){
-            $(".tmp").html((degree*1.8+32).toFixed(2));
+            $(".tmp").html((degree*1.8+32).toFixed(0));
             $(".tmp-kind").html("°F");
             console.log(degree);
             console.log($(".tmp").html());
